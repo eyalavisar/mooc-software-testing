@@ -1,5 +1,7 @@
 package tudelft.chocolate;
 
+import org.junit.jupiter.api.BeforeEach;
+
 public class ChocolateBags {
 
     public int calculate(int small, int big, int total) {
