@@ -16,4 +16,12 @@ class MyGHappyTest {
         Assertions.assertEquals(expected, result);
     }
 
+    @ParameterizedTest(name = "gString={0}, happy={1}")
+    @CsvSource({"g,false", "xg,false", "gy,false", "x,true", "yx,true",
+                "gg,true", "ggg,true", "gxg,false", "ggxg,false", "ggygg,true"})
+    void  algorithmTest(String letter, boolean expected) {
+        boolean result = happy.gHappy(letter);
+        Assertions.assertEquals(expected, result);
+    }
+
 }
