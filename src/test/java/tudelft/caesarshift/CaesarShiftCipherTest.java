@@ -13,7 +13,7 @@ public class CaesarShiftCipherTest {
     @CsvSource({"h,0,h", "a,26,a", "hi,26,hi",
                 "h,1,i", "h,-1,g", "a,25,z", "a,27,b",
                 "Hab,5,invalid", "abc-,5,invalid", "a-bc,7,invalid",
-                "abc,3,def", "5-,2,invalid", "'',3,''"})
+                "abc,3,def", "5-,2,invalid", "'',3,''","ab ab,2,cd cd"})
     void testAlgorithm(String message, int shift, String expected) {
         String result = cipher.CaesarShiftCipher(message,shift);
         Assertions.assertEquals(expected,result);
